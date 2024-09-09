@@ -22,7 +22,7 @@ FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Expose port (default port used by web applications)
-EXPOSE 80
+EXPOSE 8000
 
 # Default configuration
 CMD ["nginx", "-g", "daemon off;"]
