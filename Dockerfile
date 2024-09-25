@@ -5,7 +5,7 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 # Copy source code
-COPY COPY index.html /usr/share/nginx/html/
+COPY  index.html /usr/share/nginx/html/
 
 # Expose port (default port used by web applications)
 EXPOSE 8000
