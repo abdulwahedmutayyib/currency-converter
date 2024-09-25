@@ -11,7 +11,7 @@ COPY . .
 # RUN npm install
 
 # Build the application (adjust if you have a build process)
-RUN npm run build  # Replace with your build command if needed
+RUN npm run index # Replace with your build command if needed
 
 # Base image for serving the application
 FROM nginx:alpine
