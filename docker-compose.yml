@@ -7,8 +7,6 @@ services:
       - "8000:8000"
 
   tester:
-    image: python:3.11-alpine
-    volumes:
-      - ./tests:/app/tests
-    command: python -m unittest discover tests
+    build: test-Dockerfile
+  command: python -m unittest discover tests
 
