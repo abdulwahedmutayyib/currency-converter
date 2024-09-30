@@ -13,5 +13,7 @@ COPY tests /app/tests
 # Download ChromeDriver (adjust for other browsers)
 RUN webdriver-manager download --driver=chromedriver
 
+CMD"[docker run --name testcontainer"]
 # Command to run tests (adjust for your testing framework)
 CMD ["python", "-m", "unittest", "discover", "tests"]
+
