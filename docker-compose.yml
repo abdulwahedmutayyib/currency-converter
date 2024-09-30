@@ -1,12 +1,14 @@
 version: '3.7'
 
 services:
-  main-app:
-    build: .  # Assuming the Dockerfile for the main application is in the current directory
+  mainapp:
+    build: .
+    dockerfile: Dockerfile
     ports:
       - "8000:8000"
 
-  tester:
-    build: test-Dockerfile
-  command: python -m unittest discover tests
-
+  testcontainer:
+    build: .
+    dockerfile: test-Dockerfile
+    links:
+      - mainapp
