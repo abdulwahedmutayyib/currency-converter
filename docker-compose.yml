@@ -3,10 +3,12 @@ version: '3.7'
 services:
   mainapp:
     build: .
+    dockerfile: Dockerfile
     ports:
       - "8000:8000"
 
   testcontainer:
     build: .
+    dockerfile: test-Dockerfile
     links:
       - mainapp
