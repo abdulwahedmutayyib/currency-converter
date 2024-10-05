@@ -9,6 +9,6 @@ services:
 
   testcontainer:
     build: .
-    dockerfile: test-Dockerfile
+    dockerfile: tests-Dockerfile
     links:
       - mainapp
