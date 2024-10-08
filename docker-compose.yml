@@ -4,12 +4,12 @@ services:
   testing-container:
     build:
       context: .
-      dockerfile: Dockerfile2
+      dockerfile: tests-Dockerfile
     command: python -m selenium.webdriver.chrome.service
   mainapp:
     build:
       context: .
-      dockerfile: Dockerfile1
+      dockerfile: Dockerfile
     links:
       - testing-container
     ports:
