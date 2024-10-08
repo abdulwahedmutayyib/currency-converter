@@ -1,5 +1,5 @@
 # Base image for testing
-selenium/node-chrome
+FROM selenium/node-chrome
 # Set working directory
 WORKDIR /app
 
