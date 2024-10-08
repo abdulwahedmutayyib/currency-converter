@@ -1,6 +1,5 @@
 # Base image for testing
-FROM python:3.11-alpine
-
+selenium/node-chrome
 # Set working directory
 WORKDIR /app
 
@@ -11,7 +10,6 @@ RUN pip install selenium webdriver-manager
 COPY tests /app/tests
 
 # Download ChromeDriver (adjust for other browsers)
-RUN pip install webdriver-manager
 RUN webdriver-manager download --driver=chromedriver
 
 # Command to run tests (adjust for your testing framework)
