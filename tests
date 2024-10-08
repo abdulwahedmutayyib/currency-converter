@@ -1,10 +1,15 @@
+import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 class TestCurrencyConverter(unittest.TestCase):
+
+    # Configure logging before the class definition
+    logging.basicConfig(filename='test_results.log', level=logging.INFO)
 
     def setUp(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -44,6 +49,9 @@ class TestCurrencyConverter(unittest.TestCase):
 
         # Assert the displayed exchange rate
         self.assertEqual(exchange_rate_message.text, "1USD = 80INR")
+
+        # Log the test result
+        logging.info(f"Test Passed: Currency conversion from USD to INR successful")
 
 if __name__ == "__main__":
     unittest.main()
