@@ -1,5 +1,5 @@
 # Base image for testing
-FROM selenium/node-chrome
+FROM python:3.9-slim-buster
 # Set working directory
 WORKDIR /app
 
