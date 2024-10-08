@@ -13,4 +13,4 @@ services:
     links:
       - testing-container
     ports:
-      - "8000:8000"
+      - "8000:80"
