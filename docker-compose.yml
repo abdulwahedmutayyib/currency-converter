@@ -1,14 +1,16 @@
 version: '3.7'
 
 services:
+  testing-container:
+    build:
+      context: .
+      dockerfile: Dockerfile2
+    command: python -m selenium.webdriver.chrome.service
   mainapp:
-    build: .
-    dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    links:
+      - testing-container
     ports:
       - "8000:8000"
-
-  testcontainer:
-    build: .
-    dockerfile: tests-Dockerfile
-    links:
-      - mainapp
